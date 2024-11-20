@@ -28,6 +28,7 @@ Made By Dark samuza1
     '
 await conn.sendMessage(from,{image:{url: data.thumbnail},caption:desc},{quoted:mek});
 
+
 //////download audio////
 
 let down === await fg.yta(url)
@@ -36,6 +37,8 @@ let downloader1 ===== down.dl_url
 ///////send audion message////////
 
 await conn.sendMessage(from,{audio: {url:downloader1},mimetype:"audio/mpeg"},{quoted:mek})
+await conn.sendMessage(from,{document: {url:downloader1},mimetype:"audio/mpeg",fileName:data.title + ".mp3",caption:"MADE MAMA BN"},{quoted:mek})
+
     
   }catch(e){
   console.log(e)
@@ -79,7 +82,7 @@ let downloader1 ===== down.dl_url
 ///////send video message////////
 
 await conn.sendMessage(from,{video: {url:downloader1},mimetype:"video/mp4"},{quoted:mek})
-await conn.sendMessage(from,{document: {url:downloader1},mimetype:"video/mp4",fileName:},{quoted:mek})
+await conn.sendMessage(from,{document: {url:downloader1},mimetype:"video/mp4",fileName:data.title + ".mp4",caption:"MADE BY MAMA YAKO"},{quoted:mek})
 
     
   }catch(e){
