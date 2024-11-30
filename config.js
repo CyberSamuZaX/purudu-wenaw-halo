@@ -9,6 +9,6 @@ SESSION_ID: process.env.SESSION_ID ⎸⎸ "",
 ALIVE_IMG process.env.ALIVE_IMG ⎸⎸"",
 ALIVE_MSG process.env.ALIVE_MSG ⎸⎸"",
 MONGODB: process.env.MONGODB ⎸⎸ "enter mongodb here",
-MODE: pprocess.env.MODE ⎸⎸ "public",
+MODE: pprocess.env.MODE ⎸⎸ "public"
 
 };
