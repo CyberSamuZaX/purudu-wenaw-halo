@@ -84,6 +84,43 @@ let downloader1 ===== down.dl_url
 await conn.sendMessage(from,{video: {url:downloader1},mimetype:"video/mp4"},{quoted:mek})
 await conn.sendMessage(from,{document: {url:downloader1},mimetype:"video/mp4",fileName:data.title + ".mp4",caption:"MADE BY MAMA YAKO"},{quoted:mek})
 
+///////send video message////////
+
+         cmd({
+        pattern: "yts",
+        desc: "Gives descriptive info of query from youtube..",
+        category: "downloader",
+        filename: __filename,
+        use: '<yt search text>',
+    },
+    async(Void, citel, text) => {
+        let yts = require("secktor-pack");
+        if (!text) return citel.reply(`Example : ${prefix}yts ${tlang().title} WhatsApp Bot`);
+        let search = await yts(text);
+        let textt = "*YouTube Search*\n\n Result From " + text + "\n\n───────────────────\n";
+        let no = 1;
+        for (let i of search.all) {
+            textt += `⚡ No : ${no++}\n ❤Title : ${i.title}\n♫ Type : ${
+      i.type
+    }\n🙈Views : ${i.views}\n⌛Duration : ${
+      i.timestamp
+    }\n🌟Upload At : ${i.ago}\n👑Author : ${i.author.name}\n🎵Url : ${
+      i.url
+    }\n\n──────────────\n\n`;
+        }
+        return Void.sendMessage(citel.chat, {
+            image: {
+                url: search.all[0].thumbnail,
+            },
+            caption: textt,
+        }, {
+            quoted: citel,
+        });
+    }
+)
+
+///////send video message////////
+
     
   }catch(e){
   console.log(e)
